@@ -16,4 +16,9 @@ class PostController extends Controller
         $PostService = new PostService();
         return  $PostService->create($request);
     }
+
+    public function update(PostsRequest $request ,$id){
+        $PostService = new PostService();
+        return  $PostService->update($request,$id);
+    }
 }

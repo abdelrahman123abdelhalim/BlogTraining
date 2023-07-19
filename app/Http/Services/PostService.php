@@ -19,4 +19,17 @@ class PostService{
           ]);
         return response()->json(['msg'=>"succecss"]);
    }
+
+   public function update(PostsRequest $request ,$id){
+        $data=Post::find($id);
+        if(!$data){
+            return response()->json(['msg'=>"The data Not Found"]);
+        }
+        $data->update([
+          "user_id"=>$request->user_id,
+          "title"=>$request->title,
+          "content"=>$request->content
+          ]);
+        return response()->json(['msg'=>"succecss",'data'=>$data]);
+}
 }
