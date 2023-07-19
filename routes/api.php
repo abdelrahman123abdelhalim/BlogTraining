@@ -23,6 +23,8 @@ Route::name('Posts')->prefix('Posts')->controller(PostController::class)->group(
     Route::get('index', 'index')->name('index');
     Route::post('create', 'create')->name('create');
     Route::put('update/{id}', 'update')->name('update');
+    Route::delete('delete/{id}', 'delete')->name('delete');
+
 
 
     

@@ -32,4 +32,13 @@ class PostService{
           ]);
         return response()->json(['msg'=>"succecss",'data'=>$data]);
 }
+
+  public function delete($id){
+    $data=Post::find($id);
+    if(!$data){
+        return response()->json(['msg'=>"The data Not Found"]);
+    }
+    $data->delete();
+    return response()->json(['msg'=>"delete succecss"]);
+}
 }

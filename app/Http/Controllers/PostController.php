@@ -21,4 +21,9 @@ class PostController extends Controller
         $PostService = new PostService();
         return  $PostService->update($request,$id);
     }
+
+    public function delete($id){
+        $PostService = new PostService();
+        return $PostService->delete($id);
+    }
 }
