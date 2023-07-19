@@ -22,9 +22,9 @@ class PostsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "user_id"=>"required",
+            "user_id"=>"required|exists:users,id",
             "title"=>"required|string|max:190",
-            "content"=>"required|string",
+            "content"=>"required|string"
         ];
     }
 }
